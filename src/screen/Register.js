@@ -6,38 +6,40 @@ import {
   StyleSheet,
   TextInput,
   TouchableWithoutFeedback,
+  KeyboardAvoidingView,
   Keyboard
 } from 'react-native'
 
-class Login extends React.Component {
+class Register extends React.Component {
     render() {
         return(
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
               <View style={styles.flex}>
-                <View>
+                <KeyboardAvoidingView behavior="position" keyboardVerticalOffset={10}>
                   <View style={styles.header}>
                     <Text style={styles.headerTitle}>awokwok.</Text>
                   </View>
                   <View style={styles.content}>
-                    <Text style={styles.contentTitle}>Let's sign you in</Text>
+                    <Text style={styles.contentTitle}>Hello there!</Text>
                     <View style={styles.contentSubtitleWrapper}>
-                      <Text style={styles.contentSubtitle}>Welcome back,</Text>
-                      <Text style={styles.contentSubtitle}>You've been missed!</Text>
+                      <Text style={styles.contentSubtitle}>Join now,</Text>
+                      <Text style={styles.contentSubtitle}>and got your happiness.</Text>
                     </View>
                     <View style={styles.form}>
                       <TextInput style={styles.input} placeholder="Email" placeholderTextColor="#3B3B3F" keyboardType="email-address" />
+                      <TextInput style={styles.input} placeholder="Username" placeholderTextColor="#3B3B3F" />
                       <TextInput style={styles.input} placeholder="Passsword" placeholderTextColor="#3B3B3F" secureTextEntry/>
                     </View>
                   </View>
-                </View>
+                </KeyboardAvoidingView>
                 <View style={styles.footer}>
                   <TouchableOpacity style={styles.btnSignIn}>
-                    <Text style={styles.btnSignInTxt}>Sign in</Text>
+                    <Text style={styles.btnSignInTxt}>Sign up</Text>
                   </TouchableOpacity>
                   <View style={styles.footerRegisterWrapper}>
-                    <Text style={styles.dontHave}>Don't have any account?</Text>
+                    <Text style={styles.dontHave}>Already have an account?</Text>
                     <TouchableOpacity>
-                      <Text style={styles.registerBtn}>Register</Text>
+                      <Text style={styles.registerBtn}>Login</Text>
                     </TouchableOpacity>
                   </View>
                 </View>
@@ -47,7 +49,7 @@ class Login extends React.Component {
     }
 }
 
-export default Login
+export default Register
 
 const styles = StyleSheet.create({
   flex: {
